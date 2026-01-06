@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "serverName": "EU-Lobby-01",
+    "type": "Lobby",
+    "status": "Online",
+    "onlinePlayers": 124,
+    "maxPlayers": 200,
+    "uptime": "3d 6h"
+  },
+  {
+    "id": 2,
+    "serverName": "EU-Lobby-02",
+    "type": "Lobby",
+    "status": "Online",
+    "onlinePlayers": 87,
+    "maxPlayers": 200,
+    "uptime": "1d 14h"
+  },
+  {
+    "id": 3,
+    "serverName": "NA-Lobby-01",
+    "type": "Lobby",
+    "status": "Offline",
+    "onlinePlayers": 0,
+    "maxPlayers": 200,
+    "uptime": "0d 0h"
+  },
+  {
+    "id": 4,
+    "serverName": "SA-Lobby-01",
+    "type": "Lobby",
+    "status": "Online",
+    "onlinePlayers": 63,
+    "maxPlayers": 150,
+    "uptime": "5d 2h"
+  },
+  {
+    "id": 5,
+    "serverName": "EU-1v1Lobby-01",
+    "type": "1v1Lobby",
+    "status": "Online",
+    "onlinePlayers": 42,
+    "maxPlayers": 100,
+    "uptime": "2d 9h"
+  },
+  {
+    "id": 6,
+    "serverName": "EU-1v1Lobby-02",
+    "type": "1v1Lobby",
+    "status": "Offline",
+    "onlinePlayers": 0,
+    "maxPlayers": 100,
+    "uptime": "0d 0h"
+  },
+  {
+    "id": 7,
+    "serverName": "NA-1v1Lobby-01",
+    "type": "1v1Lobby",
+    "status": "Online",
+    "onlinePlayers": 55,
+    "maxPlayers": 120,
+    "uptime": "7d 3h"
+  },
+  {
+    "id": 8,
+    "serverName": "AS-1v1Lobby-01",
+    "type": "1v1Lobby",
+    "status": "Online",
+    "onlinePlayers": 31,
+    "maxPlayers": 80,
+    "uptime": "4d 18h"
+  },
+  {
+    "id": 9,
+    "serverName": "EU-1v1-Alpha",
+    "type": "1v1",
+    "status": "Online",
+    "onlinePlayers": 18,
+    "maxPlayers": 32,
+    "uptime": "9d 5h"
+  },
+  {
+    "id": 10,
+    "serverName": "EU-1v1-Bravo",
+    "type": "1v1",
+    "status": "Offline",
+    "onlinePlayers": 0,
+    "maxPlayers": 32,
+    "uptime": "0d 0h"
+  },
+  {
+    "id": 11,
+    "serverName": "NA-1v1-Alpha",
+    "type": "1v1",
+    "status": "Online",
+    "onlinePlayers": 27,
+    "maxPlayers": 40,
+    "uptime": "6d 11h"
+  },
+  {
+    "id": 12,
+    "serverName": "AS-1v1-Alpha",
+    "type": "1v1",
+    "status": "Online",
+    "onlinePlayers": 12,
+    "maxPlayers": 24,
+    "uptime": "2d 22h"
+  },
+  {
+    "id": 13,
+    "serverName": "Events-Weekend",
+    "type": "Other",
+    "status": "Online",
+    "onlinePlayers": 76,
+    "maxPlayers": 150,
+    "uptime": "0d 12h"
+  },
+  {
+    "id": 14,
+    "serverName": "Training-Ground",
+    "type": "Other",
+    "status": "Online",
+    "onlinePlayers": 9,
+    "maxPlayers": 60,
+    "uptime": "12d 1h"
+  },
+  {
+    "id": 15,
+    "serverName": "Dev-Sandbox-01",
+    "type": "Other",
+    "status": "Offline",
+    "onlinePlayers": 0,
+    "maxPlayers": 20,
+    "uptime": "0d 0h"
+  },
+  {
+    "id": 16,
+    "serverName": "Community-Arcade",
+    "type": "Other",
+    "status": "Online",
+    "onlinePlayers": 48,
+    "maxPlayers": 100,
+    "uptime": "1d 7h"
+  },
+  {
+    "id": 17,
+    "serverName": "EU-Lobby-03",
+    "type": "Lobby",
+    "status": "Online",
+    "onlinePlayers": 91,
+    "maxPlayers": 200,
+    "uptime": "0d 19h"
+  },
+  {
+    "id": 18,
+    "serverName": "NA-Lobby-02",
+    "type": "Lobby",
+    "status": "Online",
+    "onlinePlayers": 72,
+    "maxPlayers": 200,
+    "uptime": "2d 4h"
+  },
+  {
+    "id": 19,
+    "serverName": "EU-1v1Lobby-03",
+    "type": "1v1Lobby",
+    "status": "Online",
+    "onlinePlayers": 38,
+    "maxPlayers": 100,
+    "uptime": "1d 3h"
+  },
+  {
+    "id": 20,
+    "serverName": "NA-1v1Lobby-02",
+    "type": "1v1Lobby",
+    "status": "Offline",
+    "onlinePlayers": 0,
+    "maxPlayers": 120,
+    "uptime": "0d 0h"
+  },
+  {
+    "id": 21,
+    "serverName": "EU-1v1-Charlie",
+    "type": "1v1",
+    "status": "Online",
+    "onlinePlayers": 22,
+    "maxPlayers": 32,
+    "uptime": "3d 12h"
+  },
+  {
+    "id": 22,
+    "serverName": "NA-1v1-Bravo",
+    "type": "1v1",
+    "status": "Online",
+    "onlinePlayers": 19,
+    "maxPlayers": 40,
+    "uptime": "0d 22h"
+  },
+  {
+    "id": 23,
+    "serverName": "Community-Events",
+    "type": "Other",
+    "status": "Online",
+    "onlinePlayers": 64,
+    "maxPlayers": 120,
+    "uptime": "6d 9h"
+  },
+  {
+    "id": 24,
+    "serverName": "Modded-Arcade",
+    "type": "Other",
+    "status": "Offline",
+    "onlinePlayers": 0,
+    "maxPlayers": 80,
+    "uptime": "0d 0h"
+  }
+]
