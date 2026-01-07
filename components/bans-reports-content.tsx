@@ -52,6 +52,7 @@ type BansReportsContentProps = {
   initialBans: BanRow[];
   reports: ReportRow[];
   onUnban: (id: number) => Promise<void>;
+  onCloseReport: (id: number) => Promise<void>;
   onAddBan: (
     username: string,
     reason: string,
@@ -63,11 +64,17 @@ export function BansReportsContent({
   initialBans,
   reports,
   onUnban,
+  onCloseReport,
   onAddBan,
 }: BansReportsContentProps) {
   const [bans, setBans] = React.useState<BanRow[]>(initialBans);
+  const [reportRows, setReportRows] = React.useState<ReportRow[]>(reports);
   const [banError, setBanError] = React.useState<string | null>(null);
   const [unbanningId, setUnbanningId] = React.useState<number | null>(null);
+  const [reportError, setReportError] = React.useState<string | null>(null);
+  const [closingReportId, setClosingReportId] = React.useState<number | null>(
+    null
+  );
   const [isAddOpen, setIsAddOpen] = React.useState(false);
   const [isAdding, setIsAdding] = React.useState(false);
   const [addError, setAddError] = React.useState<string | null>(null);
@@ -84,6 +91,10 @@ export function BansReportsContent({
     setBans(initialBans);
   }, [initialBans]);
 
+  React.useEffect(() => {
+    setReportRows(reports);
+  }, [reports]);
+
   const handleUnban = async (id: number) => {
     setBanError(null);
     setUnbanningId(id);
@@ -96,6 +107,23 @@ export function BansReportsContent({
       );
     } finally {
       setUnbanningId(null);
+    }
+  };
+
+  const handleCloseReport = async (id: number) => {
+    setReportError(null);
+    setClosingReportId(id);
+    try {
+      await onCloseReport(id);
+      setReportRows((current) =>
+        current.filter((report) => report.id !== id)
+      );
+    } catch (error) {
+      setReportError(
+        error instanceof Error ? error.message : "Failed to close report."
+      );
+    } finally {
+      setClosingReportId(null);
     }
   };
 
@@ -156,9 +184,9 @@ export function BansReportsContent({
 
   const filteredReports = React.useMemo(() => {
     if (!normalizedQuery) {
-      return reports;
+      return reportRows;
     }
-    return reports.filter((report) => {
+    return reportRows.filter((report) => {
       return (
         report.reportedPlayer.toLowerCase().includes(normalizedQuery) ||
         report.reporterPlayer.toLowerCase().includes(normalizedQuery) ||
@@ -166,7 +194,7 @@ export function BansReportsContent({
         report.location.toLowerCase().includes(normalizedQuery)
       );
     });
-  }, [normalizedQuery, reports]);
+  }, [normalizedQuery, reportRows]);
 
   return (
     <>
@@ -352,10 +380,20 @@ export function BansReportsContent({
                   <TableHead>Reporter</TableHead>
                   <TableHead>Report reason</TableHead>
                   <TableHead>Location</TableHead>
+                  <TableHead className="text-right">Action</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredReports.length ? (
+                {reportError ? (
+                  <TableRow>
+                    <TableCell
+                      colSpan={5}
+                      className="text-destructive text-center"
+                    >
+                      {reportError}
+                    </TableCell>
+                  </TableRow>
+                ) : filteredReports.length ? (
                   filteredReports.map((report) => (
                     <TableRow key={report.id}>
                       <TableCell className="font-medium">
@@ -364,12 +402,24 @@ export function BansReportsContent({
                       <TableCell>{report.reporterPlayer}</TableCell>
                       <TableCell>{report.reason}</TableCell>
                       <TableCell>{report.location}</TableCell>
+                      <TableCell className="text-right">
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => handleCloseReport(report.id)}
+                          disabled={closingReportId === report.id}
+                        >
+                          {closingReportId === report.id
+                            ? "Closing..."
+                            : "Close"}
+                        </Button>
+                      </TableCell>
                     </TableRow>
                   ))
                 ) : (
                   <TableRow>
                     <TableCell
-                      colSpan={4}
+                      colSpan={5}
                       className="text-muted-foreground text-center"
                     >
                       No reports match your search.

@@ -1,12 +1,24 @@
 "use server";
 
-import { createActiveBan, deleteActiveBan, getActiveBans } from "@/lib/sql";
+import {
+  createActiveBan,
+  deleteActiveBan,
+  deletePlayerReport,
+  getActiveBans,
+} from "@/lib/sql";
 
 export async function unbanActiveBan(id: number) {
   if (!Number.isFinite(id)) {
     return;
   }
   await deleteActiveBan(id);
+}
+
+export async function closePlayerReport(id: number) {
+  if (!Number.isFinite(id)) {
+    return;
+  }
+  await deletePlayerReport(id);
 }
 
 export async function addActiveBan(

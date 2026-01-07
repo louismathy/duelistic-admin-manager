@@ -212,3 +212,8 @@ export async function getPlayerReports(): Promise<ReportRow[]> {
     location: String(row.location ?? ""),
   }));
 }
+
+export async function deletePlayerReport(id: number) {
+  const connection = getPool();
+  await connection.query("DELETE FROM player_reports WHERE id = ?", [id]);
+}

@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { getActiveBans, getPlayerReports } from "@/lib/sql";
 
-import { addActiveBan, unbanActiveBan } from "./actions";
+import { addActiveBan, closePlayerReport, unbanActiveBan } from "./actions";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +45,7 @@ export default async function BansReportsPage() {
                   initialBans={bans}
                   reports={reports}
                   onUnban={unbanActiveBan}
+                  onCloseReport={closePlayerReport}
                   onAddBan={addActiveBan}
                 />
               </div>
