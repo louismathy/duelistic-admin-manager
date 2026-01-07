@@ -54,16 +54,6 @@ const data = {
       url: "/bans-reports",
       icon: IconChartBar,
     },
-    {
-      title: "Permissions",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Commands",
-      url: "#",
-      icon: IconUsers,
-    },
   ],
 };
 
